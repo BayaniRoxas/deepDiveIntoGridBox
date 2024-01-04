@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+
+    grid-template-rows: 100px 100px 100px;
+
+    /* Using fractional units we can use one fraction of the column to set the
+    size of our columns
+    
+    so for each column, we set the fractional unit / space that item takes up
+    
+    The minmax function sets the minimum size it can be and the maximum size it can be*/
+    grid-template-columns: 1fr minmax(100px, 3fr) 1fr;
+
+    /* Create gaps between containers
+    IF YOU HAVE TWO VALUES THE FIRST IS THE GAP IN THE ROWS AND THE SECOND ON THE COLUMNS */
+    grid-gap: 1em;
+}

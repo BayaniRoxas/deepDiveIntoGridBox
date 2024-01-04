@@ -1,0 +1,63 @@
+/* Making our grid container */
+
+.container{
+    display: grid;
+
+    /* For each separate constant we create a new column / row with 
+    the length we set each pixel, for example, 100px 100px, will give us 
+    two columns / rows with lenghts 100px */
+
+    /* We have effectively created a grid 6x6, each grid being 100px by 100px*/
+
+    /* When we change position 0, pixels, we*/
+
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+
+    /* Setting the size of the rows of any implicit grid */
+    grid-auto-rows: 100px;
+
+    /* Implicit grids become columns instead*/
+    grid-auto-flow: column;
+}
+
+/* Specify the size / location of an item*/
+
+.item-1{
+    /* This method specifiies the location based off the indexed 
+    and specified conditions*/
+
+    /* This specifies where item-1 should start and end row wise*/
+    grid-row: 1 / 3;
+
+    /* This specifies where item-1 should start and end column wise*/
+    grid-column: 1 / 7;
+}
+
+/*
+.item-2{
+    /* This method specifices the size by using the span function
+    and basically states how big the item should be based off its location 
+    this is probably the worst way to do this
+    
+    grid-row: span 2;
+    grid-column: span 2;
+} 
+
+*/
+
+/* Layering items */
+
+.item-2{
+    grid-area: 2 / 4 / 4 / 6;
+    z-index: 1;
+}
+
+.item-3{
+    /* Even faster way to specifiy location and size */
+    /* These are the following values and their meanings 
+    row-start / col-start / row-end / col-end */
+
+    grid-area: 3 / 1 / 7 / 7
+}
+
